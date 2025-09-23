@@ -1,0 +1,34 @@
+ .about-us {
+    background: #f1f1f1;
+    padding: 60px 20px;
+    font-family: 'Segoe UI', sans-serif;
+    color: #222;
+    text-align: center;
+  }
+
+  .about-us .container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .about-us h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #007bff;
+  }
+
+  .about-us p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+  }
+
+  @media (max-width: 600px) {
+    .about-us h2 {
+      font-size: 28px;
+    }
+
+    .about-us p {
+      font-size: 16px;
+    }
+  }

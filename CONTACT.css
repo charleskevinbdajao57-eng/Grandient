@@ -1,0 +1,145 @@
+nav {
+  background-color: #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+/* Navigation list */
+nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0 15px;
+  position: relative;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  position: relative;
+  padding: 5px 0;
+  transition: color 0.3s ease;
+}
+
+/* Hover underline animation */
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: white;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+nav ul li a:hover::after {
+  transform: scaleX(1);
+}
+
+nav ul li a:hover {
+  color: #ffcc00;
+}
+@media screen and (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  nav ul li {
+    margin-bottom: 10px;
+  }
+}
+
+/* Search box */
+.search-box {
+  display: flex;
+  align-items: center;
+}
+
+.search-box input {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 3px;
+  outline: none;
+}
+
+.search-box button {
+  padding: 5px 10px;
+  border: none;
+  margin-left: 5px;
+  background-color: #ffcc00;
+  color: black;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: background 0.3s;
+}
+
+.search-box button:hover {
+  background-color: #e6b800;
+}
+
+.black{
+    align-items: center;
+     width: 100%;
+  height: 2px;
+   list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  color: aliceblue;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+/* LOADER */
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #ffcc00;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+#offline-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #b00020;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+  display: none;
+  z-index: 9999;
+}
+#offline-banner.show {
+  display: block;
+}

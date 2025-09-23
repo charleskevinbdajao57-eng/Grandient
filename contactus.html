@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Us</title>
+   <link rel="stylesheet" href="CONTACT.css">
+   <link rel="stylesheet" href="footer.css">
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("CdbLJWN3nzVIjMgiI"); // ⬅️ Palitan mo ito
+    })();
+  </script>
+  <style>
+    body { font-family: sans-serif; padding: 40px; background: #f5f5f5; }
+    form { max-width: 500px; margin: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px #ccc; }
+    input, textarea { width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #ccc; }
+    button { background: #28a745; color: white; border: none; padding: 12px 25px; border-radius: 5px; cursor: pointer; }
+    button:hover { background: #218838; }
+  </style>
+</head>
+<body>  <nav>
+        <head>
+    <ul>
+      <li><a href="About.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contactus.html">Contact</a></li>
+      <p class="black">HI Am Kevin</p>
+    </ul>
+
+    <div class="search-box">
+      <input type="text" placeholder="Search...">
+      <button>Search</button>
+    </div>
+        </head>
+    </nav>
+<div id="loader">
+        <div class="spinner"></div>
+    </div>
+<div id="offline-banner">⚠️ You are offline. Trying to reconnect…</div>
+
+
+  <h2 style="text-align:center;">Makipag-ugnayan sa Amin</h2>
+  <form id="contact-form">
+    <input type="text" name="user_name" placeholder="Pangalan mo" required />
+    <input type="email" name="user_email" placeholder="Email mo" required />
+    <textarea name="message" placeholder="I-type ang mensahe mo..." required></textarea>
+    <button type="submit">SUBMIT</button>
+  </form>
+
+  <script>
+    document.getElementById("contact-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      emailjs.sendForm("service_98g47p9", "template_d4n41jz", this)
+        .then(function() {
+          alert("YOUR SUCCESSFULL AYUUOO! ✅");
+        }, function(error) {
+          alert("UNSECCESS. ❌\n" + JSON.stringify(error));
+        });
+    });
+  </script>
+  <div class="footer-social">
+      <h3>Follow Us</h3>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/charles.kevin.b.dajao.2025/"><img src="Logo_de_Facebook.png" alt="Facebook" /></a>
+        <a href="#"><img src="twitter-icon.png" img src="OIP.jpeg" alt="twitter" /></a>
+        <a href="#"><img src="instagram-icon.png" img src="c:\Users\charl\New folder\icone-application-instagram-logo-medias-sociaux-illustration-vectorielle_277909-403.jpg" alt="Instagram" /></a>
+      </div>
+    </div>
+  </div>
+<script src="About.js" defer></script>
+</body>
+</html>
