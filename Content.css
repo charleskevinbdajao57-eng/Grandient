@@ -1,4 +1,5 @@
-/* Navbar */
+Body{
+  backgraound-color: gray;
 .navbar {
   display: flex;
   justify-content: center;
