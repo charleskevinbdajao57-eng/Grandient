@@ -183,31 +183,4 @@ nav ul li a:hover {
 
     }
 
-    textarea {
-      margin-top: 20px;
-      width: 80%;
-      max-width: 600px;
-      padding: 10px;
-      border: 2px solid #333;
-      border-radius: 5px;
-      font-size: 16px;
-      font-family: Arial, Helvetica, sans-serif;
-      resize: vertical;
-      transition: border-color 0.3s, box-shadow 0.3s;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      background-color: #473c3c;
-      color: #ffffff;
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-      
-    }
-    textarea:focus {
-      border-color: #ffcc00;
-      outline: none;
-      box-shadow: 0 0 5px rgba(255, 204, 0, 0.5);
-      background-color: #5c5151;
-      color: #ffffff;
-      
-    }
-    
+   
