@@ -125,9 +125,10 @@ nav ul li a:hover {
   width: 60px;
   height: 60px;
   border: 8px solid #f3f3f3;
-  border-top: 8px solid #ffcc00;
+  border-top: 8px solid #00ffbf;
+  border-left: ;
   border-radius: 50%;
-  animation: spin 1s linear infinite;
+  animation: spin 10s linear infinite;
 }
 
 @keyframes spin {
@@ -184,3 +185,4 @@ nav ul li a:hover {
     }
 
    
+
