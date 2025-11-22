@@ -111,3 +111,13 @@ Body{
   background: linear-gradient(90deg, #4a90e2, #a64ae2);
   transition: width 0.1s linear;
 }
+  @media screen and (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+    width: 100%; /* added for full width on mobile */
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+}
