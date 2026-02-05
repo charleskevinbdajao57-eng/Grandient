@@ -17,39 +17,51 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 14px 22px;
+  padding: 12px 20px;
   position: sticky;
   top: 0;
   z-index: 1000;
+  flex-wrap: wrap; /* para mobile flexibility */
+  gap: 10px;
   animation: navDrop 0.8s ease;
 }
 
-/* NAV LIST */
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 16px;
-  margin: 0;
-  padding: 0;
+/* LOGO */
+nav .logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 1px 1px 3px black;
 }
 
 /* NAV LINKS */
-nav ul li a {
-  color: #fff;
+nav ul.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+}
+
+/* LINKS BUTTONS */
+nav ul.nav-links li a {
+  position: relative;
   text-decoration: none;
+  color: #fff;
+  font-weight: bold;
   font-size: 14px;
   padding: 10px 18px;
   border-radius: 30px;
-  font-weight: bold;
   background: linear-gradient(135deg, #1e90ff, #0066ff);
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   transition: all 0.3s ease;
-  position: relative;
   overflow: hidden;
+  text-align: center;
 }
 
 /* SHINE EFFECT */
-nav ul li a::before {
+nav ul.nav-links li a::before {
   content: "";
   position: absolute;
   top: 0;
@@ -65,53 +77,21 @@ nav ul li a::before {
   transition: 0.6s;
 }
 
-nav ul li a:hover::before {
+nav ul.nav-links li a:hover::before {
   left: 100%;
 }
 
-/* HOVER EFFECT */
-nav ul li a:hover {
+nav ul.nav-links li a:hover {
   transform: translateY(-3px) scale(1.05);
   box-shadow: 0 8px 20px rgba(0,0,0,0.5);
   color: #ffeb3b;
 }
 
-/* ===== NAV ANIMATIONS ===== */
-@keyframes navDrop {
-  from {
-    opacity: 0;
-    transform: translateY(-40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ===== MOBILE VIEW ===== */
-@media (max-width: 768px) {
-
-  nav {
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  nav ul {
-    flex-direction: column;
-    width: 100%;
-    align-items: center;
-  }
-
-  nav ul li a {
-    width: 90%;
-    text-align: center;
-    font-size: 15px;
-  }
-}
-/* ===== SEARCH BOX ===== */
+/* SEARCH BOX */
 .search-box {
   display: flex;
   gap: 6px;
+  align-items: center;
 }
 
 .search-box input {
@@ -129,12 +109,57 @@ nav ul li a:hover {
   cursor: pointer;
   background: #ffcc00;
   font-weight: bold;
+  transition: 0.3s;
 }
 
 .search-box button:hover {
   background: #ffb700;
 }
 
+/* ===== NAVBAR ANIMATION ===== */
+@keyframes navDrop {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 768px) {
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  nav ul.nav-links {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: 10px;
+  }
+
+  nav ul.nav-links li a {
+    width: 90%;
+    text-align: center;
+    font-size: 15px;
+  }
+
+  .search-box {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .search-box input {
+    width: 70%;
+  }
+  
+  
 /* ===== TEXT CENTER ===== */
 .black {
   text-align: center;
@@ -243,5 +268,6 @@ canvas {
     width: 180px;
   }
 }
+
 
 
