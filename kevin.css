@@ -11,8 +11,6 @@ body {
 }
 
 /* ===== NAVBAR ===== */
-
-    /* ===== NAVBAR ===== */
 nav {
   display: flex;
   justify-content: space-between; /* logo | links | search */
@@ -118,39 +116,6 @@ nav ul.nav-links li a:hover {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* ===== MOBILE RESPONSIVE ===== */
-@media (max-width: 768px) {
-
-  nav {
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-  }
-
-  nav ul.nav-links {
-    flex-direction: column;
-    width: 100%;
-    align-items: center;
-    gap: 10px;
-  }
-
-  nav ul.nav-links li a {
-    width: 90%;
-    font-size: 15px;
-  }
-
-  .search-box {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .search-box input {
-    width: 70%;
-  }
-}
-    
-  
-  
 /* ===== TEXT CENTER ===== */
 .black {
   text-align: center;
@@ -232,6 +197,7 @@ canvas {
 }
 
 @keyframes float {
+  0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-8px); }
 }
 
@@ -240,26 +206,28 @@ canvas {
 
   nav {
     flex-direction: column;
-    gap: 10px;
+    align-items: center;
+    gap: 12px;
   }
 
-  nav ul {
+  nav ul.nav-links {
     flex-direction: column;
     width: 100%;
     align-items: center;
+    gap: 10px;
   }
 
-  nav ul li a {
+  nav ul.nav-links li a {
     width: 90%;
-    text-align: center;
     font-size: 15px;
   }
 
+  .search-box {
+    width: 100%;
+    justify-content: center;
+  }
+
   .search-box input {
-    width: 180px;
+    width: 70%;
   }
 }
-
-
-
-
