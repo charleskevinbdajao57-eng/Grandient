@@ -10,15 +10,18 @@ body {
   color: white;
 }
 
-/* ===== NAVBAR ===== */
+
+  /* ===== NAVBAR ===== */
 nav {
   display: flex;
-  justify-content: space-between; /* logo | links | search */
+  justify-content: space-between;  /* logo | links | search */
   align-items: center;
   padding: 12px 20px;
   background: linear-gradient(135deg, #0a2a66, #0f4ccf);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  border-radius: 10px;
   position: sticky;
-  top: 0;
+  top: 10px;
   z-index: 1000;
   flex-wrap: wrap;
   gap: 10px;
@@ -27,10 +30,10 @@ nav {
 
 /* LOGO */
 nav .logo {
-  font-size: 22px;
+  font-size: 24px;
   font-weight: bold;
   color: #fff;
-  text-shadow: 1px 1px 2px black;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
 
 /* NAV LINKS */
@@ -43,7 +46,7 @@ nav ul.nav-links {
   align-items: center;
 }
 
-/* LINKS BUTTONS */
+/* BUTTON STYLE + HOVER + CLICK REFLECTION */
 nav ul.nav-links li a {
   position: relative;
   text-decoration: none;
@@ -59,7 +62,7 @@ nav ul.nav-links li a {
   text-align: center;
 }
 
-/* SHINE EFFECT ON HOVER */
+/* HOVER SHINE */
 nav ul.nav-links li a::before {
   content: "";
   position: absolute;
@@ -70,12 +73,11 @@ nav ul.nav-links li a::before {
   background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
   transition: 0.6s;
 }
-
 nav ul.nav-links li a:hover::before {
   left: 100%;
 }
 
-/* CLICK/ACTIVE REFLECTION EFFECT */
+/* CLICK/ACTIVE REFLECTION */
 nav ul.nav-links li a:active::after {
   content: "";
   position: absolute;
@@ -91,11 +93,9 @@ nav ul.nav-links li a:active::after {
   );
   animation: clickReflection 0.5s forwards;
 }
-
-/* CLICK GLOW EFFECT */
 nav ul.nav-links li a:active {
-  box-shadow: 0 0 15px rgba(0,255,255,0.8), 0 0 25px rgba(0,255,255,0.5);
   transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0,255,255,0.8), 0 0 25px rgba(0,255,255,0.5);
 }
 
 @keyframes clickReflection {
@@ -127,16 +127,46 @@ nav ul.nav-links li a:active {
   font-weight: bold;
   transition: 0.3s;
 }
-
 .search-box button:hover {
   background: #ffb700;
 }
 
-/* NAVBAR ANIMATION */
+/* NAVBAR DROP ANIMATION */
 @keyframes navDrop {
   from { opacity: 0; transform: translateY(-40px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    text-align: center;
+  }
+
+  nav ul.nav-links {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: 10px;
+  }
+
+  nav ul.nav-links li a {
+    width: 90%;
+    font-size: 16px;
+  }
+
+  .search-box {
+    width: 90%;
+    justify-content: center;
+  }
+
+  .search-box input {
+    width: 70%;
+  }
+  }
 
 /* ===== TEXT CENTER ===== */
 .black {
@@ -253,3 +283,4 @@ canvas {
     width: 70%;
   }
 }
+
