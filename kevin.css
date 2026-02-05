@@ -1,218 +1,186 @@
-/* Reset body margin and font */
+/* ===== RESET & BASE ===== */
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  background-color: gray;
+  font-family: 'Poppins', Arial, sans-serif;
+  background: linear-gradient(135deg, #2c2c2c, #444);
+  color: white;
 }
 
-/* Navbar styles */
+/* ===== NAVBAR ===== */
 nav {
-  background-color: #333;
+  background: #0b1d3a;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
-  flex-wrap: wrap; /* added for better responsive behavior */
+  justify-content: space-between;
+  padding: 12px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-/* Navigation list */
+/* NAV LIST */
 nav ul {
   list-style: none;
   display: flex;
-  margin: 0;
+  gap: 15px;
   padding: 0;
+  margin: 0;
 }
 
-nav ul li {
-  margin: 0 15px;
-  position: relative;
-}
-
+/* LINKS */
 nav ul li a {
-  color: white;
   text-decoration: none;
-  font-size: 10px;
-  position: relative;
-  padding: 8px 12px;
-  transition: color 0.3s ease;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-weight: bold;
-  text-shadow: 1px 1px 2px black;
-  background-color: rgb(6, 43, 99);
-  display: block;
-  border-radius: 15px;
-}
-
-/* Hover underline animation */
-nav ul li a::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 2px;
-  background: white;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s ease;
-}
-
-nav ul li a:hover::after {
-  transform: scaleX(1);
+  font-size: 14px;
+  padding: 10px 16px;
+  color: #fff;
+  background: linear-gradient(135deg, #1e90ff, #0066ff);
+  border-radius: 25px;
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
 
 nav ul li a:hover {
-  color: #ffcc00;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  color: #ffeb3b;
 }
 
-/* Responsive Navbar */
-@media screen and (max-width: 600px) {
-  nav ul {
-    flex-direction: column;
-    width: 100%; /* added for full width on mobile */
-  }
-
-  nav ul li {
-    margin: 10px 0;
-  }
-}
-
-/* Search box */
+/* ===== SEARCH BOX ===== */
 .search-box {
   display: flex;
-  align-items: center;
+  gap: 6px;
 }
 
 .search-box input {
-  padding: 5px 10px;
+  padding: 8px 12px;
+  border-radius: 20px;
   border: none;
-  border-radius: 3px;
   outline: none;
+  width: 140px;
 }
 
 .search-box button {
-  padding: 5px 10px;
+  padding: 8px 14px;
+  border-radius: 20px;
   border: none;
-  margin-left: 5px;
-  background-color: #ffcc00;
-  color: black;
   cursor: pointer;
-  border-radius: 3px;
-  transition: background 0.3s;
-}
-
-.search-box button:hover {
-  background-color: #e6b800;
-}
-
-/* Styling for .black text */
-.black {
-  display: flex;
-  justify-content: center; /* center the text horizontally */
-  width: 100%;
-  color: aliceblue;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  margin: 0; /* remove default margin */
-  padding: 5px 0;
+  background: #ffcc00;
   font-weight: bold;
 }
 
-/* LOADER */
+.search-box button:hover {
+  background: #ffb700;
+}
+
+/* ===== TEXT CENTER ===== */
+.black {
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+/* ===== LOADER ===== */
 #loader {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: #111;
+  inset: 0;
+  background: #0a0a0a;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   z-index: 9999;
 }
 
 .spinner {
-  width: 60px;
-  height: 60px;
-  border: 8px solid #f3f3f3;
-  border-top: 8px solid #00ffbf;
+  width: 55px;
+  height: 55px;
+  border: 6px solid #444;
+  border-top: 6px solid #00ffbf;
   border-radius: 50%;
-  animation: spin 2s linear infinite; /* changed spin duration from 10s to 2s for smoother rotation */
+  animation: spin 1s linear infinite;
 }
 
 @keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+  to { transform: rotate(360deg); }
 }
 
-/* Offline Banner */
+/* ===== OFFLINE BANNER ===== */
 #offline-banner {
   position: fixed;
   top: 0;
-  left: 0;
-  right: 0;
-  background-color: #b00020;
-  color: white;
-  padding: 10px;
+  width: 100%;
+  background: crimson;
   text-align: center;
+  padding: 8px;
   font-weight: bold;
   display: none;
-  z-index: 9999;
 }
 
 #offline-banner.show {
   display: block;
 }
 
-/* Headings */
+/* ===== HEADINGS ===== */
 h1 {
-  animation: fadeIn 2s ease-in-out;
+  text-align: center;
+  margin-top: 30px;
+  animation: fadeIn 1.5s ease;
 }
 
-/* Images */
+/* ===== IMAGES ===== */
 img {
-  width: 200px;
-  border-radius: 10px;
-  margin-top: 20px;
+  width: 100%;
+  max-width: 260px;
+  display: block;
+  margin: 20px auto;
+  border-radius: 15px;
   animation: float 3s ease-in-out infinite;
 }
 
-/* Animations */
+/* ===== CANVAS ===== */
+canvas {
+  display: block;
+  margin: 30px auto;
+  background: #000;
+  border: 2px solid #fff;
+  max-width: 95%;
+}
+
+/* ===== ANIMATIONS ===== */
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(-15px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0);
-  }
+  50% { transform: translateY(-8px); }
 }
 
-/* Canvas styling */
-canvas {
-  margin-top: 30px;
-  background: black;
-  border: 2px solid white;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+/* ===== RESPONSIVE (PHONE) ===== */
+@media (max-width: 768px) {
+
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+
+  nav ul li a {
+    width: 90%;
+    text-align: center;
+    font-size: 15px;
+  }
+
+  .search-box input {
+    width: 180px;
+  }
 }
-
-
