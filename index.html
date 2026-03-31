@@ -11,7 +11,7 @@
 <body>
   <!-- Navigation -->
   <nav class="nav">
-    <div class="logo">💙 Kevin</div>
+    <div class="logo">Kevin</div>
     <ul class="nav-links">
       <li><a href="About.html">About</a></li>
       <li><a href="services.html">Services</a></li>
@@ -32,6 +32,65 @@
     <a href="About.html" class="cta-btn">Learn More</a>
   </header>
 
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secure-ish Video Player</title>
+  
+  <!-- Video.js CSS -->
+  <link href="https://vjs.zencdn.net/8.19.2/video-js.css" rel="stylesheet" />
+
+  <style>
+    body {
+      background-color: #ffe6f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: sans-serif;
+    }
+    .video-container {
+      width: 80%;
+      max-width: 800px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="video-container">
+  <video
+    id="my-video"
+    class="video-js vjs-default-skin"
+    controls
+    controlsList="nodownload"
+    preload="auto"
+    width="100%"
+    height="auto"
+    oncontextmenu="return false;"
+    data-setup='{}'>
+    <source src="videos/obfuscated-video.mp4" type="video/mp4" />
+    Your browser does not support HTML5 video.
+  </video>
+</div>
+
+<!-- Video.js JS -->
+<script src="https://vjs.zencdn.net/8.19.2/video.min.js"></script>
+
+<script>
+  // Initialize Video.js
+  const player = videojs('my-video');
+
+  // Optional: disable keyboard shortcuts for download
+  player.ready(function() {
+    player.controlBar.disable();
+  });
+</script>
+
+</body>
+</html>
   <!-- Main Content -->
   <main>
     <section class="gallery">
