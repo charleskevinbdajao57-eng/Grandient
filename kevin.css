@@ -1,4 +1,4 @@
-/* Global */
+/* ===== Global ===== */
 * {
   margin: 0;
   padding: 0;
@@ -9,12 +9,13 @@
 body {
   background: linear-gradient(to bottom, #0077cc, #66ccff);
   color: #fff;
-  overflow-x: hidden;
+  overflow-x: hidden; /* prevents horizontal scroll */
 }
 
-/* Nav */
+/* ===== Nav ===== */
 nav.nav {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
@@ -23,7 +24,6 @@ nav.nav {
   position: sticky;
   top: 0;
   z-index: 100;
-  animation: slideDown 1s ease forwards;
 }
 
 .nav .logo {
@@ -35,7 +35,8 @@ nav.nav {
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
+  flex-wrap: wrap; /* ensures links wrap on small screens */
 }
 
 .nav-links li a {
@@ -43,7 +44,6 @@ nav.nav {
   color: #fff;
   font-weight: 500;
   position: relative;
-  transition: 0.3s;
 }
 
 .nav-links li a::after {
@@ -61,22 +61,45 @@ nav.nav {
   width: 100%;
 }
 
-/* Hero */
+/* ===== Search Box ===== */
+.search-box {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.search-box input {
+  padding: 0.4rem 0.6rem;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  font-size: 0.9rem;
+  width: 120px;
+}
+
+.search-box button {
+  padding: 0.4rem 0.8rem;
+  border-radius: 5px;
+  border: none;
+  background: #005fa3;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+/* ===== Hero ===== */
 .hero {
   text-align: center;
   padding: 6rem 1rem;
-  animation: fadeIn 2s ease forwards;
 }
 
 .hero-text {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  animation: slideUp 1s ease forwards;
 }
 
 .hero-subtext {
-  font-size: 1.2rem;
+  font-size: 1rem;
   margin-bottom: 1.5rem;
 }
 
@@ -95,7 +118,7 @@ nav.nav {
   transform: translateY(-3px);
 }
 
-/* Gallery */
+/* ===== Gallery ===== */
 .gallery {
   padding: 3rem 1rem;
   text-align: center;
@@ -106,16 +129,16 @@ nav.nav {
 }
 
 .images {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* responsive grid */
   gap: 0.8rem;
+  justify-items: center;
 }
 
 .images img {
-  width: 180px;
-  height: 130px;
-  object-fit: cover;
+  width: 100%;
+  max-width: 180px;
+  height: auto; /* maintain aspect ratio */
   border-radius: 10px;
   transition: transform 0.3s;
 }
@@ -124,7 +147,7 @@ nav.nav {
   transform: scale(1.05);
 }
 
-/* Footer */
+/* ===== Footer ===== */
 .site-footer {
   background: rgba(0,0,0,0.3);
   padding: 2.5rem 1rem;
@@ -157,60 +180,23 @@ nav.nav {
   margin-right: 0.7rem;
 }
 
-/* Animations */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes slideUp {
-  from { transform: translateY(50px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-
-@keyframes slideDown {
-  from { transform: translateY(-50px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-
-/* ======= Responsive (Mobile) ======= */
+/* ===== Responsive ===== */
 @media (max-width: 768px) {
   nav.nav {
     flex-direction: column;
     gap: 1rem;
-    padding: 1rem;
   }
 
   .nav-links {
     flex-direction: column;
-    gap: 0.8rem;
     align-items: center;
   }
 
-  .hero-text {
-    font-size: 2rem;
+  .search-box {
+    justify-content: center;
+    width: 100%;
   }
 
-  .hero-subtext {
-    font-size: 1rem;
-  }
-
-  .cta-btn {
-    padding: 0.6rem 1.5rem;
-  }
-
-  .images img {
-    width: 140px;
-    height: 100px;
-  }
-
-  .footer-container {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-
-@media (max-width: 480px) {
   .hero-text {
     font-size: 1.7rem;
   }
@@ -220,16 +206,30 @@ nav.nav {
   }
 
   .cta-btn {
-    padding: 0.5rem 1.2rem;
+    padding: 0.6rem 1.5rem;
     font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-text {
+    font-size: 1.4rem;
+  }
+
+  .hero-subtext {
+    font-size: 0.8rem;
+  }
+
+  .cta-btn {
+    padding: 0.5rem 1.2rem;
+    font-size: 0.8rem;
   }
 
   .images img {
-    width: 120px;
-    height: 90px;
+    max-width: 140px;
   }
 
   nav.nav .logo {
     font-size: 1.3rem;
   }
-  }
+}
