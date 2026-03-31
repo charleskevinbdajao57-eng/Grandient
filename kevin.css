@@ -1,197 +1,174 @@
-/* ===== Global Styles ===== */
+/* Global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
 body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #f8c8dc, #ffe7f0);
-    color: #333;
+  background: linear-gradient(to bottom, #0077cc, #66ccff);
+  color: #fff;
+  overflow-x: hidden;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
-    transition: color 0.3s;
+/* Nav */
+nav.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+  background: rgba(0,0,0,0.2);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  animation: slideDown 1s ease forwards;
 }
 
-a:hover {
-    color: #ff4da6;
+.nav .logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 2px;
 }
 
-/* ===== Navbar ===== */
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 50px;
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 30px;
+.nav-links li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  position: relative;
+  transition: 0.3s;
 }
 
-nav li {
-    font-weight: 600;
-    font-size: 16px;
+.nav-links li a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: #fff;
+  bottom: -4px;
+  left: 0;
+  transition: 0.3s;
 }
 
-nav li a {
-    padding: 5px 10px;
-    border-radius: 5px;
+.nav-links li a:hover::after {
+  width: 100%;
 }
 
-nav li a:hover {
-    background: #ff4da6;
-    color: white;
-    transition: 0.3s;
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 8rem 2rem;
+  animation: fadeIn 2s ease forwards;
 }
 
-nav p.black {
-    font-weight: 700;
-    color: #222;
+.hero-text {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  animation: slideUp 1s ease forwards;
 }
 
-.search-box {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+.hero-subtext {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
 }
 
-.search-box input {
-    padding: 6px 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+.cta-btn {
+  background: #005fa3;
+  color: #fff;
+  padding: 0.8rem 2rem;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 30px;
+  transition: 0.3s;
 }
 
-.search-box button {
-    margin-top: 5px;
-    padding: 6px 12px;
-    background: #ff4da6;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
+.cta-btn:hover {
+  background: #66ccff;
+  transform: translateY(-3px);
 }
 
-.search-box button:hover {
-    background: #ff77c2;
+/* Gallery */
+.gallery {
+  padding: 4rem 2rem;
+  text-align: center;
 }
 
-/* ===== Loader ===== */
-#loader {
-    display: none; /* Hide by default */
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.gallery h2 {
+  margin-bottom: 2rem;
 }
 
-.spinner {
-    border: 6px solid #f3f3f3;
-    border-top: 6px solid #ff4da6;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    animation: spin 1s linear infinite;
+.images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
 }
 
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+.images img {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s;
 }
 
-/* ===== Section: Images with Reflection ===== */
-section {
-    text-align: center;
-    padding: 50px 20px;
+.images img:hover {
+  transform: scale(1.1);
 }
 
-section h2 {
-    font-size: 36px;
-    margin-bottom: 40px;
-    color: #ff4da6;
-}
-
-section img {
-    width: 200px;
-    margin: 20px;
-    border-radius: 15px;
-    transition: transform 0.3s, box-shadow 0.3s;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-    display: inline-block;
-    /* Reflection effect */
-    -webkit-box-reflect: below 5px linear-gradient(transparent, rgba(255,255,255,0.3));
-}
-
-section img:hover {
-    transform: translateY(-10px) scale(1.05);
-    box-shadow: 0 15px 25px rgba(0,0,0,0.3);
-}
-
-/* ===== Canvas ===== */
-#myCanvas {
-    display: block;
-    margin: 50px auto;
-    border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-}
-
-/* ===== Footer ===== */
+/* Footer */
 .site-footer {
-    background: #ff4da6;
-    color: white;
-    padding: 50px 20px;
+  background: rgba(0,0,0,0.3);
+  padding: 3rem 2rem;
+  margin-top: 4rem;
 }
 
 .footer-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 30px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .footer-about, .footer-links, .footer-social {
-    flex: 1 1 200px;
+  margin: 1rem;
 }
 
 .footer-links ul {
-    list-style: none;
-    padding: 0;
+  list-style: none;
 }
 
-.footer-links li {
-    margin: 10px 0;
-}
-
-.footer-links li a:hover {
-    text-decoration: underline;
-}
-
-.footer-social .social-icons {
-    display: flex;
-    gap: 15px;
+.footer-links ul li a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  margin: 0.5rem 0;
 }
 
 .footer-social img {
-    width: 30px;
-    height: 30px;
-    transition: transform 0.3s;
+  width: 30px;
+  margin-right: 1rem;
 }
 
-.footer-social img:hover {
-    transform: scale(1.2);
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-.footer-bottom {
-    text-align: center;
-    margin-top: 30px;
-    font-size: 14px;
-    opacity: 0.8;
+@keyframes slideUp {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
+
+@keyframes slideDown {
+  from { transform: translateY(-50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+    }
