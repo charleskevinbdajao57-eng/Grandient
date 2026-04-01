@@ -32,18 +32,24 @@ nav.nav {
 
 /* Logo Image */
 /* Logo Image Tama ang Laki */
+/* ===== Logo Image sa Navbar ===== */
 nav .logo img {
-  height: 40px;  /* mas maliit kaysa 50px, perfect sa normal nav */
-  width: auto;   /* maintain aspect ratio, hindi mag distort */
-  border-radius: 6px;  /* optional para medyo smooth */
+  height: 40px;       /* tamang-tama sa nav */
+  width: auto;        /* maintain aspect ratio */
+  border-radius: 6px; /* optional: medyo rounded corners */
   transition: transform 0.3s ease;
 }
 
 nav .logo img:hover {
-  transform: scale(1.05); /* subtle zoom kapag hover */
+  transform: scale(1.05); /* subtle zoom effect */
 }
 
-
+/* ===== Mobile Responsive Logo ===== */
+@media screen and (max-width: 480px) {
+  nav .logo img {
+    height: 30px;  /* mas maliit sa cellphone */
+  }
+}
 .nav-links {
   list-style: none;
   display: flex;
