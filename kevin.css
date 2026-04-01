@@ -31,16 +31,18 @@ nav.nav {
 }
 
 /* Logo Image */
+/* Logo Image Tama ang Laki */
 nav .logo img {
-  height: 50px;       /* adjust size ng logo */
-  width: auto;        /* maintain aspect ratio */
-  border-radius: 8px; /* optional: rounded corners */
+  height: 40px;  /* mas maliit kaysa 50px, perfect sa normal nav */
+  width: auto;   /* maintain aspect ratio, hindi mag distort */
+  border-radius: 6px;  /* optional para medyo smooth */
   transition: transform 0.3s ease;
 }
 
 nav .logo img:hover {
-  transform: scale(1.05);
+  transform: scale(1.05); /* subtle zoom kapag hover */
 }
+
 
 .nav-links {
   list-style: none;
