@@ -9,13 +9,12 @@
 body {
   background: linear-gradient(to bottom, #0077cc, #66ccff);
   color: #fff;
-  overflow-x: hidden; /* prevents horizontal scroll */
+  overflow-x: hidden;
 }
 
-/* ===== Nav ===== */
+/* ===== Navigation ===== */
 nav.nav {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
@@ -24,6 +23,7 @@ nav.nav {
   position: sticky;
   top: 0;
   z-index: 100;
+  flex-wrap: wrap;
 }
 
 .nav .logo {
@@ -36,7 +36,7 @@ nav.nav {
   list-style: none;
   display: flex;
   gap: 1rem;
-  flex-wrap: wrap; /* ensures links wrap on small screens */
+  flex-wrap: wrap;
 }
 
 .nav-links li a {
@@ -84,9 +84,14 @@ nav.nav {
   color: #fff;
   cursor: pointer;
   font-size: 0.9rem;
+  transition: 0.3s;
 }
 
-/* ===== Hero ===== */
+.search-box button:hover {
+  background: #66ccff;
+}
+
+/* ===== Hero Section ===== */
 .hero {
   text-align: center;
   padding: 6rem 1rem;
@@ -118,6 +123,13 @@ nav.nav {
   transform: translateY(-3px);
 }
 
+/* ===== Video Section ===== */
+.video-container {
+  width: 80%;
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
 /* ===== Gallery ===== */
 .gallery {
   padding: 3rem 1rem;
@@ -130,7 +142,7 @@ nav.nav {
 
 .images {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* responsive grid */
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 0.8rem;
   justify-items: center;
 }
@@ -138,7 +150,7 @@ nav.nav {
 .images img {
   width: 100%;
   max-width: 180px;
-  height: auto; /* maintain aspect ratio */
+  height: auto;
   border-radius: 10px;
   transition: transform 0.3s;
 }
@@ -160,7 +172,9 @@ nav.nav {
   flex-wrap: wrap;
 }
 
-.footer-about, .footer-links, .footer-social {
+.footer-about,
+.footer-links,
+.footer-social {
   margin: 1rem 0.5rem;
 }
 
