@@ -1,164 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Aboutus.css">
-     <link rel="stylesheet" href="TEXT.css">
-     <link rel="stylesheet" href="footer.css">
-    <title>AboutUs</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="about.css">
 </head>
 <body>
 
-    <style>
-    /* ------------------ GLOBAL ------------------ */
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-    body {
-      background: linear-gradient(135deg, #1e3c72, #2a5298);
-      color: #fff;
-      overflow-x: hidden;
-    }
-    a { text-decoration: none; color: inherit; }
+<!-- NAVIGATION -->
+<nav class="nav">
+  <div class="logo">Kevin</div>
 
-    /* ------------------ NAVIGATION ------------------ */
-    nav.nav {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 1rem 2rem; background: rgba(0,0,0,0.3); backdrop-filter: blur(8px);
-      position: fixed; width: 100%; z-index: 100;
-    }
-    .logo { font-size: 1.5rem; font-weight: 700; color: #fff; }
-    .nav-links { list-style: none; display: flex; gap: 1.5rem; }
-    .nav-links li a { transition: 0.3s; }
-    .nav-links li a:hover { color: #00d4ff; }
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="service.html">Services</a></li>
+    <li><a href="contactus.html">Contact</a></li>
+  </ul>
 
-    .search-box { display: flex; gap: 0.5rem; }
-    .search-box input {
-      padding: 0.3rem 0.5rem; border-radius: 5px; border: none;
-    }
-    .search-box button {
-      padding: 0.3rem 0.8rem; border-radius: 5px; border: none; background: #00d4ff; color: #000;
-      cursor: pointer; transition: 0.3s;
-    }
-    .search-box button:hover { background: #00b3e6; }
+  <div class="search-box">
+    <input type="text" placeholder="Search...">
+    <button>Search</button>
+  </div>
+</nav>
 
-    /* ------------------ HERO ------------------ */
-    header.hero {
-      height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
-      text-align: center; position: relative; overflow: hidden;
-      padding: 0 1rem;
-    }
-    .hero-text { font-size: 3rem; font-weight: 700; margin-bottom: 1rem; animation: fadeInDown 1s ease forwards; }
-    .hero-subtext { font-size: 1.2rem; margin-bottom: 2rem; animation: fadeInUp 1s ease forwards; }
+<!-- HERO -->
+<header class="hero">
+  <h1 class="hero-text">WELCOME TO MY WEBSITE</h1>
+  <p class="hero-subtext">We are students learning and building together</p>
+</header>
 
-    .cta-btn {
-      padding: 0.8rem 2rem;
-      border-radius: 30px;
-      background: rgba(255,255,255,0.2);
-      border: 2px solid #00d4ff;
-      color: #fff;
-      font-weight: 600;
-      backdrop-filter: blur(10px);
-      transition: 0.4s;
-    }
-    .cta-btn:hover {
-      background: #00d4ff;
-      color: #000;
-      transform: scale(1.05);
-    }
-
-    /* ------------------ PARTICLE EFFECT ------------------ */
-    .particle {
-      position: absolute;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.15);
-      pointer-events: none;
-      animation: float 15s linear infinite;
-    }
-
-    @keyframes float {
-      0% { transform: translateY(0) translateX(0); opacity: 0.3; }
-      50% { transform: translateY(-200px) translateX(50px); opacity: 0.5; }
-      100% { transform: translateY(-400px) translateX(-50px); opacity: 0.3; }
-    }
-
-    @keyframes fadeInDown { from { opacity:0; transform: translateY(-50px); } to { opacity:1; transform: translateY(0); } }
-    @keyframes fadeInUp { from { opacity:0; transform: translateY(50px); } to { opacity:1; transform: translateY(0); } }
-        </style>
-     <nav>
-        <head>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="service.html">Services</a></li>
-      <li><a href="contactus.html">Contact</a></li>
-      <p class="black">HI Am Kevin</p>
-    </ul>
-
-    <div class="search-box">
-      <input type="text" placeholder="Search...">
-      <button>Search</button>
-    </div>
-        </head>
-    </nav>
-<div id="loader">
-        <div class="spinner"></div>
-    </div>
-<div id="offline-banner">⚠️ You are offline. Trying to reconnect…</div>
+<!-- ABOUT SECTION -->
 <section class="about-us">
   <div class="container">
-<h1>WELCOME TO MY WEBSITE</h1>
 
-<P>We are students coming together to create a meaningful project
-as part of our studies. We aim to showcase our knowledge of technology,
-design, and collaboration through this simple website.</P>
+    <p>We are students coming together to create a meaningful project as part of our studies.</p>
 
-<p>By working on this project, we learned to plan, design, and execute
-ideas using HTML, CSS, and JavaScript. Every part of the website is a product of
-our efforts and cooperation as a group.</p>
+    <p>We learned HTML, CSS, and JavaScript while building this website.</p>
 
-<P>We are not professionals, but we are full of enthusiasm and determination to learn and succeed in our field.</P>
-      <p>Let's go to a love website for you if you want to make this a love letter. -><a href="https://vlogtorobloxdave.github.io/heart-mycha/">Love Website</a><- </p>
+    <p>We are not professionals, but we are determined to improve and succeed.</p>
 
-<p>CAN YOU HELP You <br>Gmail <br> <a href="charleskevinbdajao57@gmail.com">charleskevinbdajao57@gmail.com</a> <br> <a href="vlogtorobloxdave@gmail,com">vlogtorobloxdave@gmail.com</a></p>
+    <p>
+      Try our love website 👉 
+      <a href="https://vlogtorobloxdave.github.io/heart-mycha/" target="_blank">
+        Click Here
+      </a>
+    </p>
+
+    <p>
+      Contact us:<br>
+      <a href="mailto:charleskevinbdajao57@gmail.com">charleskevinbdajao57@gmail.com</a><br>
+      <a href="mailto:vlogtorobloxdave@gmail.com">vlogtorobloxdave@gmail.com</a>
+    </p>
+
   </div>
+</section>
 
-  <footer class="site-footer">
+<!-- FOOTER -->
+<footer class="site-footer">
   <div class="footer-container">
-    <div class="footer-about">
+
+    <div>
       <h3>About Us</h3>
-      <p>We are students working on this project to learn, grow, and apply real-world web development skills.</p>
+      <p>Student project for learning web development.</p>
     </div>
 
-    <div class="footer-links">
+    <div>
       <h3>Quick Links</h3>
       <ul>
-        <li><a href="">Download FOR FILES</a></li>
         <li><a href="About.html">About</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="contactus.html">Contact</a></li>
       </ul>
     </div>
 
-    <div class="footer-social">
+    <div>
       <h3>Follow Us</h3>
-      <div class="social-icons">
-        <a href="https://www.facebook.com/charles.kevin.b.dajao.2025/"><img src="Logo_de_Facebook.png" alt="Facebook" /></a>
-        <a href="#"><img src="OIP.jpeg" alt="Twitter" /></a>
-        <a href="#"><img src="icone-application-instagram-logo-medias-sociaux-illustration-vectorielle_277909-403.jpg" alt="Instagram" /></a>
-      </div>
+      <img src="Logo_de_Facebook.png" width="25">
+      <img src="OIP.jpeg" width="25">
+      <img src="icone-application-instagram-logo-medias-sociaux-illustration-vectorielle_277909-403.jpg" width="25">
     </div>
+
   </div>
 
-  <div class="footer-bottom">
-    <p>&copy; 2025 Student Project. All rights reserved.</p>
-  </div>
+  <p class="footer-bottom">&copy; 2025 Student Project</p>
 </footer>
-<script src="About.js" defer></script>
+
+<script src="About.js"></script>
 </body>
-
 </html>
-
-
-
-
-
-
