@@ -1,4 +1,4 @@
-/* ===== Global ===== */
+/* ===== GLOBAL ===== */
 * {
   margin: 0;
   padding: 0;
@@ -9,182 +9,116 @@
 body {
   background: linear-gradient(135deg, #1e3c72, #2a5298);
   color: #fff;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-  position: relative;
 }
 
-/* ===== Navigation ===== */
-nav.nav {
+/* ===== NAV ===== */
+.nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  background: rgba(0,0,0,0.3);
-  backdrop-filter: blur(10px);
+  padding: 1rem;
+  background: rgba(0,0,0,0.7);
   position: sticky;
   top: 0;
-  z-index: 100;
-  flex-wrap: wrap;
-  border-bottom: 2px solid #00d4ff;
-  transition: 0.3s;
 }
 
-/* Compact Logo para sa maliit na nav */
-nav .logo img {
-  height: 25px;   /* maliit at space-friendly */
-  width: auto;    
-  border-radius: 4px;
-  transition: transform 0.3s ease;
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
-nav .logo img:hover {
-  transform: scale(1.05); /* subtle zoom */
-}
-
-/* Mobile version */
-@media screen and (max-width: 480px) {
-  nav .logo img {
-    height: 22px;  /* very small para mobile */
-  }
-}
-
-/* ===== Mobile Responsive Logo ===== */
-@media screen and (max-width: 480px) {
-  nav .logo img {
-    height: 30px;  /* mas maliit sa cellphone */
-  }
-}
 .nav-links {
-  list-style: none;
   display: flex;
+  list-style: none;
   gap: 1rem;
-  flex-wrap: wrap;
 }
 
-.nav-links li a {
+.nav-links a {
+  color: white;
   text-decoration: none;
-  color: #fff;
-  font-weight: 500;
-  position: relative;
-  padding: 0.3rem 0.5rem;
-  transition: 0.3s;
 }
 
-.nav-links li a:hover {
+.nav-links a:hover {
   color: #00d4ff;
 }
 
-.nav-links li a::after {
-  content: '';
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  background: #00d4ff;
-  bottom: -4px;
-  left: 0;
-  transition: 0.3s;
-}
-
-.nav-links li a:hover::after {
-  width: 100%;
-}
-
-/* Search Box */
+/* SEARCH */
 .search-box {
   display: flex;
-  gap: 0.5rem;
+  gap: 5px;
 }
 
 .search-box input {
-  padding: 0.4rem 0.6rem;
-  border-radius: 5px;
-  border: none;
-  outline: none;
-  font-size: 0.9rem;
-  width: 140px;
+  padding: 5px;
 }
 
 .search-box button {
-  padding: 0.4rem 0.8rem;
-  border-radius: 5px;
-  border: none;
   background: #00d4ff;
-  color: #005fa3;
+  border: none;
+  padding: 5px 10px;
   cursor: pointer;
-  font-weight: 600;
-  transition: 0.3s;
 }
 
-.search-box button:hover {
-  background: #005fa3;
-  color: #fff;
-}
-
-/* Styling for .black text */
-.black {
-  display: flex;
-  justify-content: center; /* center the text horizontally */
-  width: 100%;
-  color: aliceblue;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  margin: 0; /* remove default margin */
-  padding: 5px 0;
-  font-weight: bold;
-}
-
-/* LOADER */
-#loader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: #111;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-
-.spinner {
-  width: 60px;
-  height: 60px;
-  border: 8px solid #f3f3f3;
-  border-top: 8px solid #00ffbf;
-  border-radius: 50%;
-  animation: spin 2s linear infinite; /* changed spin duration from 10s to 2s for smoother rotation */
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-/* Offline Banner */
-#offline-banner {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-color: #b00020;
-  color: white;
-  padding: 10px;
+/* ===== HERO ===== */
+.hero {
   text-align: center;
-  font-weight: bold;
-  display: none;
-  z-index: 9999;
+  padding: 100px 20px 50px;
 }
 
-#offline-banner.show {
-  display: block;
+.hero-text {
+  font-size: 2rem;
 }
 
-/* Headings */
-h1 {
-  animation: fadeIn 2s ease-in-out;
+.hero-subtext {
+  margin-top: 10px;
+}
+
+/* ===== ABOUT ===== */
+.about-us {
+  padding: 2rem;
+  text-align: center;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+}
+
+.container p {
+  margin: 1rem 0;
+}
+
+/* ===== FOOTER ===== */
+.site-footer {
+  background: rgba(0,0,0,0.5);
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 600px) {
+  .nav {
+    flex-direction: column;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .search-box {
+    width: 100%;
+    justify-content: center;
+  }
 }
