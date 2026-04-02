@@ -1,107 +1,124 @@
-body {
+/* ===== Global ===== */
+* {
   margin: 0;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  background-color: gray;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
-/* Navbar styles */
-nav {
-  background-color: #333;
+body {
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: #fff;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  position: relative;
+}
+
+/* ===== Navigation ===== */
+nav.nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
-  flex-wrap: wrap; /* added for better responsive behavior */
+  padding: 1rem 2rem;
+  background: rgba(0,0,0,0.3);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  flex-wrap: wrap;
+  border-bottom: 2px solid #00d4ff;
+  transition: 0.3s;
 }
 
-/* Navigation list */
-nav ul {
-  list-style: none;
-  display: flex;
-  margin: 0;
-  padding: 0;
-}
-
-nav ul li {
-  margin: 0 15px;
-  position: relative;
-}
-
-nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-size: 10px;
-  position: relative;
-  padding: 8px 12px;
-  transition: color 0.3s ease;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-weight: bold;
-  text-shadow: 1px 1px 2px black;
-  background-color: rgb(6, 43, 99);
-  display: block;
-  border-radius: 15px;
-}
-
-/* Hover underline animation */
-nav ul li a::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 2px;
-  background: white;
-  transform: scaleX(0);
-  transform-origin: left;
+/* Compact Logo para sa maliit na nav */
+nav .logo img {
+  height: 25px;   /* maliit at space-friendly */
+  width: auto;    
+  border-radius: 4px;
   transition: transform 0.3s ease;
 }
 
-nav ul li a:hover::after {
-  transform: scaleX(1);
+nav .logo img:hover {
+  transform: scale(1.05); /* subtle zoom */
 }
 
-nav ul li a:hover {
-  color: #ffcc00;
-}
-
-/* Responsive Navbar */
-@media screen and (max-width: 600px) {
-  nav ul {
-    flex-direction: column;
-    width: 100%; /* added for full width on mobile */
-  }
-
-  nav ul li {
-    margin: 10px 0;
+/* Mobile version */
+@media screen and (max-width: 480px) {
+  nav .logo img {
+    height: 22px;  /* very small para mobile */
   }
 }
 
-/* Search box */
+/* ===== Mobile Responsive Logo ===== */
+@media screen and (max-width: 480px) {
+  nav .logo img {
+    height: 30px;  /* mas maliit sa cellphone */
+  }
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  position: relative;
+  padding: 0.3rem 0.5rem;
+  transition: 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #00d4ff;
+}
+
+.nav-links li a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: #00d4ff;
+  bottom: -4px;
+  left: 0;
+  transition: 0.3s;
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+/* Search Box */
 .search-box {
   display: flex;
-  align-items: center;
+  gap: 0.5rem;
 }
 
 .search-box input {
-  padding: 5px 10px;
+  padding: 0.4rem 0.6rem;
+  border-radius: 5px;
   border: none;
-  border-radius: 3px;
   outline: none;
+  font-size: 0.9rem;
+  width: 140px;
 }
 
 .search-box button {
-  padding: 5px 10px;
+  padding: 0.4rem 0.8rem;
+  border-radius: 5px;
   border: none;
-  margin-left: 5px;
-  background-color: #ffcc00;
-  color: black;
+  background: #00d4ff;
+  color: #005fa3;
   cursor: pointer;
-  border-radius: 3px;
-  transition: background 0.3s;
+  font-weight: 600;
+  transition: 0.3s;
 }
 
 .search-box button:hover {
-  background-color: #e6b800;
+  background: #005fa3;
+  color: #fff;
 }
 
 /* Styling for .black text */
