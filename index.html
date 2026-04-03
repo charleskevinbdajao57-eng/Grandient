@@ -113,11 +113,13 @@
   <nav class="nav">
     <img src="@" alt="Kevin Logo" />
     <ul class="nav-links">
-      <li><a href="About.html">About</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="contactus.html">Contact</a></li>
-      <li><a href="Gradient.html">Gradient Content</a></li>
-      <li><a href="error.html">Announcement</a></li>
+      <div id="transition">
+      <li><a href="About.html" class="nav-link">About</a></li>
+      <li><a href="services.html" class="nav-link">Services</a></li>
+      <li><a href="contactus.html" class="nav-link">Contact</a></li>
+      <li><a href="Gradient.html" class="nav-link">Gradient Content</a></li>
+      <li><a href="error.html" class="nav-link">Announcement</a></li>
+      </div>
     </ul>
     <div class="search-box">
       <input type="text" id="search-input" placeholder="Search..." />
@@ -214,5 +216,22 @@
 
   <script src="hello.js" defer></script>
   <script src="searchengine.js" defer></script>
+    <script>
+const links = document.querySelectorAll(".nav-link");
+const transition = document.getElementById("transition");
+
+links.forEach(link => {
+  link.addEventListener("click", function(e) {
+    e.preventDefault();
+    const url = this.href;
+
+    transition.classList.add("active");
+
+    setTimeout(() => {
+      window.location.href = url;
+    }, 400);
+  });
+});
+    </script>
 </body>
 </html>
